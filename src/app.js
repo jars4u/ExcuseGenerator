@@ -7,8 +7,33 @@ import "./assets/img/4geeks.ico";
 
 window.onload = () => {
   //write your code here
-  let randomNumber = Math.random() * 10;
-  document.querySelector("#excuse").innerHTML = randomNumber;
-  console.log("Hello Rigo from the console! " + randomNumber);
+  document.querySelector("#excuse").innerHTML = generateExcuse();
+  console.log("Hello Rigo from the console! ");
 };
-let generateExcuse = () => {};
+let generateExcuse = () => {
+  let who = ["el perro", "mi abuela", "la tortuga", "mi conejo"];
+  let action = ["se comio", "se orino", "rompio", "tumbo"];
+  let what = ["mi tarea", "las llaves", "el carro"];
+  let when = [
+    "antes de llegar a clase",
+    "en ese momento",
+    "cuando terminé",
+    "durante mi almuerzo",
+    "mientras oraba"
+  ];
+
+  let whoIndx = Math.floor(Math.random() * who.length);
+  let actionIndx = Math.floor(Math.random() * action.length);
+  let whatIndx = Math.floor(Math.random() * what.length);
+  let whenIndx = Math.floor(Math.random() * when.length);
+
+  return (
+    who[whoIndx] +
+    " " +
+    action[actionIndx] +
+    " " +
+    what[whatIndx] +
+    " " +
+    when[whenIndx]
+  );
+};
